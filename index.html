@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <style>
+        #wrap{
+            width:30%;
+            margin:0 auto;
+            border-radius: 5px;
+
+        }
+        :after{
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        #wrap div{
+            width:28%;
+            margin:1%;
+            padding: 14% 0;
+            float:left;
+            border-radius:5px;
+            transition:4s;
+            -moz-transition:4s; /* Firefox 4 */
+            -webkit-transition:4s; /* Safari and Chrome */
+            -o-transition:4s; /* Opera */
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+<script>
+  /* window.onload = function () {
+        var timer = setInterval(function() {
+            changeColor();
+        },2000);
+
+        var wrap= document.getElementById("wrap").children;
+        var i= 0;
+        var before = 0;
+        function changeColor(){
+            var rand = Math.ceil(Math.random() *3);
+            var color="";
+            var name="";
+
+            wrap[before].style.backgroundColor ="#fff";
+            switch (rand) {
+                case 1:
+                    color="#cb4042";
+                    name="红色";
+                    break;
+                case 2:
+                    color="#ffc408";
+                    name="黄色";
+                    break;
+                case 3:
+                    color="#3a8fb7";
+                    name="蓝色";
+                    break;
+            }
+            wrap[i].style.backgroundColor = color;
+            console.log("格子" + (i + 1) + "变成了" + name);
+            before = i;
+            i++;
+
+        }
+    }*/
+
+
+//window.onload必须加 不加 命名function changecolor不起作用
+window.onload=function Changecolor() {
+    var wrap = document.getElementById("wrap").children;
+    var i= 0;
+
+    var change=function(){
+        var chars=["#cb4042","#ffc408","#3a8fb7"];
+        var colors=chars[Math.floor(Math.random()*3)];
+        wrap[i].style.backgroundColor = colors;
+        console.log("格子"+(i+1)+"颜色"+colors);
+        i++;
+        i=i % 9;
+    }
+
+
+    var box =setInterval(change,1000);
+
+
+
+}
+</script>
+</body>
+</html>
